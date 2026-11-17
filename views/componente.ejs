@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title><%= item.nome %> | Portal da Eletrônica</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="detail"><a class="back" href="/catalogo">← Voltar ao catálogo</a>
+      <div class="detail-grid">
+        <div>
+          <p class="eyebrow dark"><%= item.categoria.toUpperCase() %> / GUIA DO COMPONENTE</p>
+          <h1><%= item.nome %><span class="accent">.</span></h1>
+          <p class="detail-lead"><%= item.descricao %></p>
+        </div>
+        <div class="detail-art" role="img" aria-label="Ilustração simbólica de <%= item.nome %>">
+          <span><%= item.icone %></span><small>PORTAL DA ELETRÔNICA / GUIA 01</small></div>
+      </div>
+      <div class="detail-content">
+        <div>
+          <p class="eyebrow dark">ENTENDA O COMPONENTE</p>
+          <h2>Como funciona<span class="accent">.</span></h2>
+        </div>
+        <div>
+          <p><%= item.texto %></p>
+          <div class="notice"><strong>Vídeo explicativo</strong>
+            <p>O vídeo com legendas será adicionado pela equipe após sua produção.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+
+</html>

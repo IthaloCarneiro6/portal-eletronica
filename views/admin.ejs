@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Painel | Portal da Eletrônica</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <main class="catalog">
+    <p class="eyebrow dark">ÁREA ADMINISTRATIVA / DEMONSTRAÇÃO</p>
+    <h1>Componentes<span class="accent">.</span></h1>
+    <p>Visualização dos componentes disponíveis no catálogo.</p>
+    <div class="notice">Esta página é uma demonstração e não possui autenticação ou operações de
+      gerenciamento.</div>
+    <div class="admin-list">
+      <% itens.forEach(item => { %>
+        <div>
+          <strong><%= item.nome %></strong>
+          <span><%= item.categoria %></span>
+        </div>
+      <% }) %>
+    </div>
+    <a class="text-link dark-link" href="/catalogo">Ver catálogo público ↗</a>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+
+</html>

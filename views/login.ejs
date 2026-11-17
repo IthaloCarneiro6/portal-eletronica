@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login | Portal da Eletrônica</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+  <main class="login-page">
+    <div class="login-intro">
+      <p class="eyebrow">ÁREA ADMINISTRATIVA</p>
+      <h1>Por trás de cada ideia, <em>tem organização.</em></h1>
+      <p>Acesse o espaço de gerenciamento do Portal da Eletrônica.</p>
+      <div class="login-deco" aria-hidden="true">✳</div>
+    </div>
+    <div class="login-wrap">
+      <form class="login-form" action="/admin/componentes" method="get">
+        <p class="eyebrow dark">BEM-VINDO DE VOLTA</p>
+        <h2>Acesso administrativo<span class="accent">.</span></h2>
+        <p>Preencha os campos para acessar o painel de demonstração.</p>
+        <label for="usuario">Usuário</label>
+        <input id="usuario" type="text" placeholder="Digite seu usuário" autocomplete="username" required>
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+        <button class="button primary" type="submit">Entrar no painel ↗</button>
+        <small>Esta é uma interface demonstrativa e não realiza autenticação.</small>
+      </form>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+
+</html>

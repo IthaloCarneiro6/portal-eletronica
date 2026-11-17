@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Catálogo | Portal da Eletrônica</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section class="page-heading">
+      <p class="eyebrow">O PONTO DE PARTIDA PARA SUAS IDEIAS</p>
+      <h1>Catálogo de <em>componentes.</em></h1>
+      <p>Explore, descubra e entenda os elementos por trás de cada circuito.</p>
+
+      <form class="search" action="/catalogo">
+        <label class="sr-only" for="q">Buscar componente ou categoria</label>
+        <input id="q" name="q" value="<%= q %>" placeholder="Busque por componente ou categoria">
+        <button type="submit">Buscar ↗</button>
+      </form>
+    </section>
+
+    <section class="catalog">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow dark">EXPLORE O CATÁLOGO</p>
+          <h2>Conheça os componentes<span class="accent">.</span></h2>
+        </div>
+        <span>ORGANIZADOS POR CATEGORIA</span>
+      </div>
+
+      <% if (!categories.length) { %>
+        <p>Nenhum resultado encontrado. Tente outra busca.</p>
+      <% } %>
+
+      <% categories.forEach((categoria, index) => { %>
+        <div class="category">
+          <div class="category-title">
+            <span><%= String(index + 1).padStart(2, '0') %> / CATEGORIA</span>
+            <h3><%= categoria.nome %></h3>
+          </div>
+
+          <div class="cards">
+            <% categoria.itens.forEach(item => { %>
+              <article class="card">
+                <div class="card-art" aria-hidden="true">
+                  <span><%= item.icone %></span>
+                  <small>PORTAL / ELETRÔNICA</small>
+                </div>
+                <div class="card-body">
+                  <span class="card-category"><%= categoria.nome %></span>
+                  <h4><%= item.nome %></h4>
+                  <p><%= item.descricao %></p>
+
+                  <% if (item.slug) { %>
+                    <a class="card-link" href="/componentes/<%= item.slug %>" aria-label="Conhecer <%= item.nome %>">
+                      Conhecer componente <span>↗</span>
+                    </a>
+                  <% } else { %>
+                    <span class="soon">NO CATÁLOGO</span>
+                  <% } %>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        </div>
+      <% }) %>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
