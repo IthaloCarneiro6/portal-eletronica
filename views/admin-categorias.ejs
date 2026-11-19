@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Categorias | Portal da Eletrônica</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="catalog admin-page">
+    <a class="text-link dark-link" href="/admin/componentes">← Voltar aos componentes</a>
+    <p class="eyebrow dark admin-kicker">ÁREA ADMINISTRATIVA / DEMONSTRAÇÃO</p>
+    <h1>Categorias<span class="accent">.</span></h1>
+    <p>Visualize os componentes organizados em suas categorias.</p>
+    <div class="notice">Organização demonstrativa: alterações não são persistidas.</div>
+    <% categories.forEach(categoria => { %>
+      <section class="admin-category">
+        <h2><%= categoria.nome %></h2>
+        <ul><% categoria.itens.forEach(item => { %><li><%= item.nome %></li><% }) %></ul>
+        <a class="dark-link" href="/catalogo?q=<%= encodeURIComponent(categoria.nome) %>">Ver no catálogo</a>
+      </section>
+    <% }) %>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

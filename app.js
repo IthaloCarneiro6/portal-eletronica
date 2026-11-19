@@ -127,6 +127,18 @@ app.get("/componentes/:slug", (req, res) => {
 });
 app.get("/login", (req, res) => res.render("login"));
 app.get("/admin/componentes", (req, res) => res.render("admin", { itens }));
+app.get("/admin/componentes/novo", (req, res) =>
+  res.render("admin-form", { item: null, categories }),
+);
+app.get("/admin/componentes/:id/editar", (req, res) => {
+  const id = Number(req.params.id);
+  const item = Number.isInteger(id) && id >= 0 ? itens[id] : undefined;
+  if (!item) return res.status(404).send("Componente não encontrado");
+  res.render("admin-form", { item, categories });
+});
+app.get("/admin/categorias", (req, res) =>
+  res.render("admin-categorias", { categories }),
+);
 app.listen(process.env.PORT || 3000, () =>
   console.log(
     `Portal disponível em http://localhost:${process.env.PORT || 3000}`,

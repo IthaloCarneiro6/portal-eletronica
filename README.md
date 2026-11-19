@@ -1,6 +1,6 @@
 # Portal da Eletrônica
 
-Portal educacional para explorar componentes eletrônicos por categoria e consultar explicações sobre quatro deles. Inclui uma tela de login e uma visualização administrativa demonstrativas.
+Portal educacional para explorar componentes eletrônicos por categoria e consultar explicações sobre quatro deles. Inclui modo escuro, alto contraste e interfaces administrativas demonstrativas de listagem, cadastro, edição, exclusão e categorias.
 
 ## Tecnologias
 
@@ -18,4 +18,4 @@ Node.js, Express, EJS, HTML, CSS e JavaScript.
 - `views/`: páginas EJS e trechos compartilhados.
 - `public/`: estilos e JavaScript do navegador.
 
-O painel não possui autenticação real, persistência ou operações de gerenciamento. Não use credenciais reais. Os vídeos educativos legendados devem ser produzidos e incorporados pela equipe; as ilustrações atuais são simbólicas. As demais telas administrativas e o protótipo no Figma ainda não foram produzidos.
+O painel não possui autenticação real, persistência ou operações de gerenciamento. Não use credenciais reais. Os vídeos educativos legendados devem ser produzidos e incorporados pela equipe; as ilustrações atuais são simbólicas. As interfaces administrativas são demonstrações e não salvam alterações. As fotos reais dos componentes e a atualização do protótipo no Figma dependem dos materiais e do acesso da equipe.

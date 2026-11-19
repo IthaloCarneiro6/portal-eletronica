@@ -883,3 +883,68 @@ footer > span {
 .dark-mode footer {
   background: #211637;
 }
+
+/* Interfaces administrativas */
+.admin-kicker { margin-top: 40px; }
+.admin-actions, .admin-row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.admin-secondary, .admin-row-actions a, .admin-row-actions button { border: 1px solid #5c09ad; border-radius: 4px; padding: 10px 16px; color: #5c09ad; background: transparent; font-weight: 700; cursor: pointer; }
+.admin-list .admin-row { align-items: center; }
+.admin-list .admin-item { display: flex; flex-direction: column; border: 0; padding: 0; gap: 6px; }
+.admin-list .admin-row-actions { display: flex; flex-direction: row; border: 0; padding: 0; }
+.admin-form { max-width: 720px; display: grid; gap: 10px; }
+.admin-form label { margin-top: 12px; font-weight: 700; }
+.admin-form input, .admin-form select, .admin-form textarea { width: 100%; padding: 12px; border: 1px solid #77778a; border-radius: 4px; background: #fff; color: #161642; font: inherit; }
+.admin-form .admin-actions { margin-top: 20px; }
+.admin-category { border-top: 1px solid #d1d1dd; padding: 24px 0; }
+.admin-category h2 { font-size: 24px; }
+.admin-category li { margin: 8px 0; }
+dialog { max-width: min(90vw, 500px); border: 1px solid #8f8fa3; border-radius: 8px; padding: 30px; background: #fff; color: #161642; }
+dialog::backdrop { background: #000a; }
+.dark-mode .admin-secondary, .dark-mode .admin-row-actions a, .dark-mode .admin-row-actions button { border-color: #c5adff; color: #e0d3ff; }
+.dark-mode .admin-form input, .dark-mode .admin-form select, .dark-mode .admin-form textarea, .dark-mode dialog { background: #25253b; color: #fff; border-color: #b9b9ce; }
+@media (max-width: 550px) { .contrast span { font-size: inherit; } .contrast span:after { content: none; } nav { gap: 10px; } }
+
+/* Alto contraste tem prioridade sobre os demais temas. */
+html.high-contrast { color-scheme: dark; --navy: #000; --ink: #fff; --muted: #fff; --purple: #09cccc; --cyan: #09cccc; }
+.high-contrast body, .high-contrast .header, .high-contrast .hero, .high-contrast .page-heading, .high-contrast .login-intro, .high-contrast .login-wrap, .high-contrast .card, .high-contrast .card-art, .high-contrast .detail-art, .high-contrast .cta, .high-contrast footer, .high-contrast .notice, .high-contrast dialog, .high-contrast .admin-form input, .high-contrast .admin-form select, .high-contrast .admin-form textarea { background: #000 !important; color: #fff !important; }
+.high-contrast a, .high-contrast .eyebrow, .high-contrast .dark, .high-contrast .accent, .high-contrast .brand-icon, .high-contrast .card-category, .high-contrast .soon, .high-contrast .features span, .high-contrast .section-top > span, .high-contrast .category-title > span, .high-contrast .detail .back, .high-contrast .card-art > span, .high-contrast .detail-art > span { color: #09cccc !important; }
+.high-contrast button, .high-contrast .button, .high-contrast .admin-secondary, .high-contrast .admin-row-actions button, .high-contrast .admin-row-actions a { background: #000 !important; color: #09cccc !important; border: 2px solid #09cccc !important; }
+.high-contrast .card, .high-contrast .notice, .high-contrast .admin-category, .high-contrast .category, .high-contrast .features > div, .high-contrast .admin-list .admin-row, .high-contrast dialog, .high-contrast .admin-form input, .high-contrast .admin-form select, .high-contrast .admin-form textarea { border: 2px solid #fff !important; }
+.high-contrast p, .high-contrast .detail-content > div > p, .high-contrast .hero-copy > p:not(.eyebrow), .high-contrast .page-heading > p:not(.eyebrow), .high-contrast .login-intro > p:not(.eyebrow), .high-contrast footer p, .high-contrast footer > span, .high-contrast .admin-list span, .high-contrast .login-form small, .high-contrast .card-art small, .high-contrast .hero-bottom { color: #fff !important; }
+.high-contrast .search { background: #000; border: 2px solid #fff; }
+.high-contrast .search input, .high-contrast .login-form input { color: #fff; background: #000; border: 2px solid #fff; }
+.high-contrast :focus-visible, .high-contrast .card:has(.card-link):focus-within { outline: 3px solid #09cccc; outline-offset: 3px; }
+.high-contrast .hero-art, .high-contrast .cta-star, .high-contrast .login-deco { opacity: 0.2; }
+
+/* Espaçamento dentro das bordas adicionadas pelo alto contraste. */
+.high-contrast .admin-list .admin-row,
+.high-contrast .admin-category,
+.high-contrast .category,
+.high-contrast .features > div {
+  padding: 20px;
+}
+
+.high-contrast .admin-list .admin-row + .admin-row {
+  margin-top: 12px;
+}
+
+.high-contrast .admin-category + .admin-category {
+  margin-top: 16px;
+}
+
+.high-contrast nav button {
+  padding: 10px 12px;
+}
+
+.high-contrast .search input {
+  padding: 12px 15px;
+}
+
+@media (max-width: 550px) {
+  .high-contrast .admin-list .admin-row,
+  .high-contrast .admin-category,
+  .high-contrast .category,
+  .high-contrast .features > div {
+    padding: 16px;
+  }
+}

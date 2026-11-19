@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title><%= item ? 'Editar' : 'Novo' %> componente | Portal da Eletrônica</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main class="catalog admin-page">
+    <a class="text-link dark-link" href="/admin/componentes">← Voltar aos componentes</a>
+    <p class="eyebrow dark admin-kicker">ÁREA ADMINISTRATIVA / DEMONSTRAÇÃO</p>
+    <h1><%= item ? 'Editar componente' : 'Novo componente' %><span class="accent">.</span></h1>
+    <p>Preencha os dados do componente.</p>
+    <div class="notice">Formulário demonstrativo: os dados não serão salvos.</div>
+    <form class="admin-form" id="demo-form">
+      <label for="nome">Nome do componente</label>
+      <input id="nome" name="nome" value="<%= item ? item.nome : '' %>" required>
+      <label for="categoria">Categoria</label>
+      <select id="categoria" name="categoria" required>
+        <option value="">Selecione uma categoria</option>
+        <% categories.forEach(categoria => { %>
+          <option value="<%= categoria.nome %>" <%= item && item.categoria === categoria.nome ? 'selected' : '' %>><%= categoria.nome %></option>
+        <% }) %>
+      </select>
+      <label for="descricao">Descrição breve</label>
+      <textarea id="descricao" name="descricao" rows="3" required><%= item ? item.descricao : '' %></textarea>
+      <label for="conteudo">Funcionamento e aplicações</label>
+      <textarea id="conteudo" name="conteudo" rows="6"><%= item && item.texto ? item.texto : '' %></textarea>
+      <label for="imagem">Imagem do componente</label>
+      <input id="imagem" name="imagem" type="file" accept="image/*">
+      <label for="alt">Descrição da imagem (texto alternativo)</label>
+      <input id="alt" name="alt" type="text">
+      <div class="admin-actions"><button class="button primary" type="submit">Salvar</button><a class="button admin-secondary" href="/admin/componentes">Cancelar</a></div>
+      <p id="demo-message" class="notice" role="status" hidden></p>
+    </form>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -39,7 +39,7 @@
         <div class="category">
           <div class="category-title">
             <span><%= String(index + 1).padStart(2, '0') %> / CATEGORIA</span>
-            <h3><%= categoria.nome %></h3>
+            <h3><a class="category-link" href="/catalogo?q=<%= encodeURIComponent(categoria.nome) %>"><%= categoria.nome %></a></h3>
           </div>
 
           <div class="cards">

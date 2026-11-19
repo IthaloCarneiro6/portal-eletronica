@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Painel | Portal da Eletrônica</title>
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
   <%- include('partials/header') %>
-
-  <main class="catalog">
+  <main class="catalog admin-page">
     <p class="eyebrow dark">ÁREA ADMINISTRATIVA / DEMONSTRAÇÃO</p>
     <h1>Componentes<span class="accent">.</span></h1>
     <p>Visualização dos componentes disponíveis no catálogo.</p>
-    <div class="notice">Esta página é uma demonstração e não possui autenticação ou operações de
-      gerenciamento.</div>
+    <div class="notice">Esta página é uma demonstração e não possui autenticação ou persistência de dados.</div>
+    <div class="admin-actions">
+      <a class="button primary" href="/admin/componentes/novo">Novo componente</a>
+      <a class="button admin-secondary" href="/admin/categorias">Organizar categorias</a>
+    </div>
+    <p id="delete-result" class="notice" role="status" tabindex="-1" hidden></p>
     <div class="admin-list">
-      <% itens.forEach(item => { %>
-        <div>
-          <strong><%= item.nome %></strong>
-          <span><%= item.categoria %></span>
+      <% itens.forEach((item, index) => { %>
+        <div class="admin-row">
+          <div class="admin-item"><strong><%= item.nome %></strong><span><%= item.categoria %></span></div>
+          <div class="admin-row-actions">
+            <a href="/admin/componentes/<%= index %>/editar" aria-label="Editar <%= item.nome %>">Editar</a>
+            <button class="delete-trigger" type="button" data-name="<%= item.nome %>" aria-label="Excluir <%= item.nome %>">Excluir</button>
+          </div>
         </div>
       <% }) %>
     </div>
-    <a class="text-link dark-link" href="/catalogo">Ver catálogo público ↗</a>
+    <a class="text-link dark-link" href="/catalogo">Ver catálogo público</a>
   </main>
-
+  <dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-description">
+    <h2 id="delete-title">Excluir componente?</h2>
+    <p id="delete-description">Tem certeza de que deseja excluir <strong id="delete-name"></strong>?</p>
+    <p>Esta é uma demonstração: o componente não será removido.</p>
+    <div class="admin-actions">
+      <button type="button" class="admin-secondary" id="cancel-delete">Cancelar</button>
+      <button type="button" class="button primary" id="confirm-delete">Confirmar exclusão</button>
+    </div>
+  </dialog>
   <%- include('partials/footer') %>
 </body>
-
 </html>
