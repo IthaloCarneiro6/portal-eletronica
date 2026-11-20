@@ -1,0 +1,89 @@
+WEBVTT
+
+1
+00:00:00.533 --> 00:00:02.800
+esse é o sensor ultrassônico
+
+2
+00:00:02.833 --> 00:00:05.000
+hcsr04
+
+3
+00:00:05.133 --> 00:00:07.866
+ele serve pra medir distância sem encostar em nada
+
+4
+00:00:08.266 --> 00:00:10.866
+repara nesses dois cilindros que parecem olhos
+
+5
+00:00:11.200 --> 00:00:12.600
+um deles é oemissor
+
+6
+00:00:12.900 --> 00:00:14.866
+ele solta um som muito agudo
+
+7
+00:00:14.900 --> 00:00:16.266
+de quarenta quilorretes
+
+8
+00:00:16.933 --> 00:00:18.900
+que o ouvido humano não consegue escutar
+
+9
+00:00:19.466 --> 00:00:20.800
+o outro é um receptor
+
+10
+00:00:20.900 --> 00:00:23.100
+que fica esperando o eco desse som voltar
+
+11
+00:00:23.566 --> 00:00:25.200
+quando o som bate no objeto
+
+12
+00:00:25.400 --> 00:00:26.666
+ele volta para o sensor
+
+13
+00:00:26.800 --> 00:00:29.200
+o Arduino mede quanto tempo isso levou
+
+14
+00:00:29.533 --> 00:00:31.333
+e como a gente sabe a velocidade do som
+
+15
+00:00:31.566 --> 00:00:33.133
+a gente consegue calcular a distância
+
+16
+00:00:33.600 --> 00:00:34.800
+a gente divide por dois
+
+17
+00:00:35.066 --> 00:00:37.666
+justamente porque o som faz o caminho de ida e de volta
+
+18
+00:00:37.966 --> 00:00:40.733
+né é o mesmo princípio do sensor de ré
+
+19
+00:00:40.933 --> 00:00:44.200
+dos carros e da forma como os morcegos se localizam
+
+20
+00:00:44.500 --> 00:00:45.166
+na eletrônica
+
+21
+00:00:45.166 --> 00:00:47.800
+ele é usado em robôs que desviam de obstáculos
+
+22
+00:00:48.266 --> 00:00:50.200
+alarmes e medidores de nível de água

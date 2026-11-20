@@ -19,8 +19,9 @@
           <h1><%= item.nome %><span class="accent">.</span></h1>
           <p class="detail-lead"><%= item.descricao %></p>
         </div>
-        <div class="detail-art" role="img" aria-label="Ilustração simbólica de <%= item.nome %>">
-          <span><%= item.icone %></span><small>PORTAL DA ELETRÔNICA / GUIA 01</small></div>
+        <div class="detail-art detail-photo">
+          <img src="<%= item.imagem %>" alt="<%= item.imagemAlt %>">
+        </div>
       </div>
       <div class="detail-content">
         <div>
@@ -29,9 +30,14 @@
         </div>
         <div>
           <p><%= item.texto %></p>
-          <div class="notice"><strong>Vídeo explicativo</strong>
-            <p>O vídeo com legendas será adicionado pela equipe após sua produção.</p>
-          </div>
+          <section class="component-video" aria-labelledby="video-title">
+            <h3 id="video-title">Vídeo explicativo</h3>
+            <video controls preload="metadata" playsinline>
+              <source src="<%= item.video %>" type="video/mp4">
+              <track kind="captions" src="<%= item.legenda %>" srclang="pt-BR" label="Português (Brasil)" default>
+              Seu navegador não suporta a reprodução de vídeo.
+            </video>
+          </section>
         </div>
       </div>
     </section>

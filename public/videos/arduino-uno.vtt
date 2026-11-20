@@ -1,0 +1,101 @@
+WEBVTT
+
+1
+00:00:00.166 --> 00:00:01.766
+esse é o Arduino Uno
+
+2
+00:00:01.866 --> 00:00:03.266
+uma das placas mais utilizadas
+
+3
+00:00:03.333 --> 00:00:05.166
+por quem tá começando na eletrônica
+
+4
+00:00:05.566 --> 00:00:07.500
+ele funciona como se fosse um pequeno computador
+
+5
+00:00:08.100 --> 00:00:10.566
+no centro da placa fica o microcontrolador
+
+6
+00:00:10.700 --> 00:00:11.866
+que é o chip que guarda
+
+7
+00:00:12.000 --> 00:00:13.966
+e executa o programa que a gente escreve
+
+8
+00:00:14.533 --> 00:00:16.400
+nas bordas ficam os pinos
+
+9
+00:00:16.600 --> 00:00:18.866
+é por eles que o Arduino conversa com o mundo
+
+10
+00:00:19.333 --> 00:00:22.366
+ele pode ler sensores com 1 sensor de distância
+
+11
+00:00:22.566 --> 00:00:24.500
+e controlar saídas como LEDs
+
+12
+00:00:24.700 --> 00:00:25.700
+buzzes e motores
+
+13
+00:00:26.300 --> 00:00:28.000
+a programação é feita no computador
+
+14
+00:00:28.166 --> 00:00:29.266
+na Arduino ide
+
+15
+00:00:29.700 --> 00:00:31.466
+e é enviada pelo cabo USB
+
+16
+00:00:32.000 --> 00:00:33.366
+todo programa tem duas partes
+
+17
+00:00:33.533 --> 00:00:34.333
+o setup
+
+18
+00:00:34.333 --> 00:00:36.166
+que roda uma vez quando a placa liga
+
+19
+00:00:36.333 --> 00:00:37.066
+e o loop
+
+20
+00:00:37.066 --> 00:00:39.300
+que fica se repetindo enquanto ela estiver ligada
+
+21
+00:00:39.766 --> 00:00:41.733
+o Arduino é usado em protótipos
+
+22
+00:00:41.966 --> 00:00:43.166
+automação residencial
+
+23
+00:00:43.500 --> 00:00:45.866
+robótica e em muitos projetos de estudantes
+
+24
+00:00:46.100 --> 00:00:47.200
+é o ponto de partida
+
+25
+00:00:47.333 --> 00:00:49.133
+perfeito pra tirar uma ideia do papel

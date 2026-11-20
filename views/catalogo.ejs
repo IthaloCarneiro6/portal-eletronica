@@ -46,8 +46,12 @@
             <% categoria.itens.forEach(item => { %>
               <article class="card">
                 <div class="card-art" aria-hidden="true">
-                  <span><%= item.icone %></span>
-                  <small>PORTAL / ELETRÔNICA</small>
+                  <% if (item.imagem) { %>
+                    <img src="<%= item.imagem %>" alt="" loading="lazy">
+                  <% } else { %>
+                    <span><%= item.icone %></span>
+                    <small>PORTAL / ELETRÔNICA</small>
+                  <% } %>
                 </div>
                 <div class="card-body">
                   <span class="card-category"><%= categoria.nome %></span>

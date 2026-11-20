@@ -18,4 +18,4 @@ Node.js, Express, EJS, HTML, CSS e JavaScript.
 - `views/`: páginas EJS e trechos compartilhados.
 - `public/`: estilos e JavaScript do navegador.
 
-O painel não possui autenticação real, persistência ou operações de gerenciamento. Não use credenciais reais. Os vídeos educativos legendados devem ser produzidos e incorporados pela equipe; as ilustrações atuais são simbólicas. As interfaces administrativas são demonstrações e não salvam alterações. As fotos reais dos componentes e a atualização do protótipo no Figma dependem dos materiais e do acesso da equipe.
+O painel não possui autenticação real, persistência ou operações de gerenciamento. Não use credenciais reais. As quatro páginas educativas incluem fotos e vídeos com legendas em português. As interfaces administrativas são demonstrações e não salvam alterações. A atualização do protótipo no Figma depende do acesso da equipe.

@@ -948,3 +948,43 @@ html.high-contrast { color-scheme: dark; --navy: #000; --ink: #fff; --muted: #ff
     padding: 16px;
   }
 }
+
+/* Fotos e vídeos dos componentes */
+.detail-photo {
+  overflow: hidden;
+  background: #fff;
+}
+.detail-photo img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  padding: 16px;
+  object-fit: contain;
+}
+.card-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  object-fit: contain;
+  background: #fff;
+}
+.component-video {
+  margin-top: 32px;
+}
+.component-video h3 {
+  font-size: 24px;
+}
+.component-video video {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  background: #000;
+}
+.high-contrast .detail-photo,
+.high-contrast .card-art:has(img) {
+  background: #fff !important;
+}
+@media (max-width: 550px) {
+  .detail-photo img { height: 240px; }
+}
